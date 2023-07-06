@@ -18,28 +18,26 @@ pragma solidity 0.8.18;
 
 contract MyToken { 
 
-    // public variables here
-    string public tokenName = "AISENCARL";
-    string public tokenAbbrv = "AC";
-    uint public totalSupply = 0;
+   // public variables here
+   string public tokenName = "AISENCARL";
+   string public tokenAbbrv = "AC";
+   uint public totalSupply = 0;
 
-    // mapping variable here
+   // mapping variable here
    mapping(address => uint) public balances;
 
-    // mint function
+   // mint function
    function mint (address _address, uint _value) public {
-    totalSupply += _value;
-    balances[_address] += _value;
+      totalSupply += _value;
+      balances[_address] += _value;
    }
-   
-    // burn function
-    function burn (address _address, uint _value) public {
+   // burn function
+   function burn (address _address, uint _value) public {
       if (balances[_address] >= _value) {    
       totalSupply -= _value;
       balances[_address] -= _value;
         }
     }
-
 }
     
 Select "Solidity Compiler" from the list of tabs in the left sidebar to compile the code. Click "Crisologo.sol" after that, then "Compile Code" after that, and watch for the green check to show up in the "Solidity Compiler" logo. The contract can then be deployed using the "Deploy & Run Transactions" tab in the left-hand sidebar after the code has been compiled. Click "Deploy" after selecting the "Crisologo.sol" contract from the drop-down menu. You can engage with the contract after it's ready for usage by enlarging the Deployed Contracts section under the address. Your deployed contract can be expanded by simply pressing the arrow button on the left side of it. Now that you have created a contract, you can interact with it. Simply enter the required data to set up the changes, including the address (just copy the account address), the token's value, and the quantity of tokens you want to mint, burn, and then trade. To check it, simply choose "balances".
